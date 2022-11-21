@@ -54,6 +54,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// mkdir
+	if _, err = os.Stat(eCmd.OutputPath); os.IsNotExist(err) {
+		err := os.MkdirAll(eCmd.OutputPath, 0731)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
 	// build zip file
 	zFile, err := os.Create(path.Join(eCmd.OutputPath, app.OutputZipFileName()))
 	if err != nil {

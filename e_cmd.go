@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"os"
 	"path"
-	"strings"
 )
 
 const (
@@ -52,13 +51,13 @@ func (c *ECmd) InitWithFlag() error {
 	if err != nil {
 		return err
 	}
-	if !strings.HasPrefix(c.BundlePath, "/") {
+	if !path.IsAbs(c.BundlePath) {
 		c.BundlePath = path.Join(pwd, c.BundlePath)
 	}
-	if !strings.HasPrefix(c.DistPath, "/") {
+	if !path.IsAbs(c.DistPath) {
 		c.DistPath = path.Join(pwd, c.DistPath)
 	}
-	if !strings.HasPrefix(c.OutputPath, "/") {
+	if !path.IsAbs(c.OutputPath) {
 		c.OutputPath = path.Join(pwd, c.OutputPath)
 	}
 

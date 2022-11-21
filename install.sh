@@ -9,7 +9,7 @@ else
   abort "Only supported on macOS and Linux."
 fi
 
-EPB_VERSION='0.0.2'
+EPB_VERSION='0.0.3'
 EPB_FILENAME="epb_${EPB_VERSION}_${OS}_${UNAME_MACHINE}.tar.gz"
 EPB_DOWNLOAD_URL="https://github.com/ccggyy/epb/releases/download/${EPB_VERSION}/${EPB_FILENAME}"
 

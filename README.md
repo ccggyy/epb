@@ -4,11 +4,18 @@
 
 ## Install
 
+On macOS or Linux, run following command.
+
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ccggyy/epb/HEAD/install.sh)"
 ```
 
-Or manual download binary from [release](https://github.com/ccggyy/epb/releases).
+On Windows, manual download binary from [release](https://github.com/ccggyy/epb/releases) and then unzip to following
+directory.
+
+```shell
+%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+```
 
 ## Using
 
@@ -17,6 +24,7 @@ Or manual download binary from [release](https://github.com/ccggyy/epb/releases)
 - `-p` bundle path
 - `-d` dist path
 - `-o` output path
+- `-V` print version
 
 ```shell
 epb \

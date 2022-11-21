@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"flag"
+	"fmt"
 	"os"
 	"path"
 	"strings"
@@ -20,15 +21,21 @@ type ECmd struct {
 	OutputPath     string
 	ConfigFileName string
 	VersionPart    string
+	PrintVersion   bool
 }
 
 func (c *ECmd) InitWithFlag() error {
+	flag.BoolVar(&c.PrintVersion, "V", false, "Print EPB version.")
 	flag.StringVar(&c.BundlePath, "p", "", "Path to needs handle package")
 	flag.StringVar(&c.DistPath, "d", "", "Web dist path")
 	flag.StringVar(&c.OutputPath, "o", "", "Output path")
 	flag.StringVar(&c.ConfigFileName, "f", "package.json", "Config filename")
 	flag.StringVar(&c.VersionPart, "v", "trailing", "Needs increase part of version. Options: leading,center,trailing")
 	flag.Parse()
+
+	if c.PrintVersion {
+		fmt.Printf("EPB version %s\n", version)
+	}
 
 	if c.BundlePath == "" ||
 		c.DistPath == "" ||

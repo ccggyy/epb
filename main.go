@@ -11,6 +11,10 @@ import (
 	"strings"
 )
 
+var (
+	version = ""
+)
+
 func main() {
 	// init cmd parameters
 	eCmd := &ECmd{}

@@ -35,5 +35,10 @@ func (av *EVersion) Increase(idx int) error {
 		return errors.New("invalid idx")
 	}
 	av[idx] += 1
+	for i := range av {
+		if i > idx {
+			av[i] = 0
+		}
+	}
 	return nil
 }
